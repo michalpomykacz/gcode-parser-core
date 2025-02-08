@@ -6,18 +6,13 @@
 
 extern "C" {
 
-/// A C API function to parse a G-code string. The input is a C string and
-/// the return value is a newly allocated C string which the caller is responsible
-/// for freeing using `free_string`.
-///
-/// # Safety
-/// This function uses raw pointers.
+/// C API function to parse G-code from a string.
 char *parse_gcode_c(const char *gcode);
 
-/// A C API helper function to free strings allocated by `parse_gcode_c`.
-///
-/// # Safety
-/// The pointer must have been allocated by `parse_gcode_c`.
+/// C API function to parse G-code from a file.
+char *parse_gcode_from_file_c(const char *file_path);
+
+/// C API function to free a string allocated by `parse_gcode_c` or `parse_gcode_from_file_c`.
 void free_string(char *s);
 
 }  // extern "C"
