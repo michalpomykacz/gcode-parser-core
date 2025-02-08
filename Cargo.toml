@@ -1,0 +1,17 @@
+[package]
+name = "gcode-parser-core"
+version = "0.1.0"
+edition = "2021"
+description = "A library for parsing G-code files and extracting metadata."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "gcode_parser_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = "0.23.3"
+
+[features]
+default = ["python"]
+python = ["pyo3/extension-module"]
