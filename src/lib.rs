@@ -1,4 +1,6 @@
 mod parser;
+pub mod meatpack;
+mod decoder;
 
 use std::ffi::CString;
 
